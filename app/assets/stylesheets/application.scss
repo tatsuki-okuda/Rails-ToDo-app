@@ -1,0 +1,112 @@
+@import './devise';
+@import './common';
+
+
+p{
+  font-family: Avenir;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 1;
+}
+
+body{
+  margin:0;
+  padding:0;
+}
+
+.ct{
+  width: 96.53vw;
+  margin: 0 auto;
+}
+
+
+*{
+  box-sizing: border-box;
+}
+
+html,
+body {
+  // デフォルトは16px
+  font-size: 62.5%;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  background-color: #FFFFFF;
+  font-family:
+      Meiryo,
+      "Helvetica Neue",
+      Arial,
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      "BIZ UDPGothic",
+      sans-serif;
+}
+
+main {
+  overflow: hidden;
+  width: 100%;
+}
+
+
+// ***********************************************************
+// ***********************************************************
+//   flexboxテンプレ
+// ***********************************************************
+// ***********************************************************
+
+.flex {
+  display: flex;
+  &.al-ce{
+      align-items: center;
+  }
+  &.al-en{
+      align-items: flex-end;
+  }
+  &.al-st{
+      align-items: flex-start;
+  }
+
+  &.fle-en {
+      justify-content: flex-end;
+  }
+  &.fle-st {
+      justify-content: flex-start;
+  }
+  &.column {
+      flex-direction: column;
+  }
+  &.spa-be {
+      justify-content: space-between;
+  }
+  &.spa-ar {
+      justify-content: space-around;
+  }
+  &.spa-ce{
+      justify-content: center;
+  }
+  &.ju-ce{
+      justify-content: center;
+  }
+  &.wrap{
+      flex-wrap: wrap;
+  }
+  &.col-to-row{
+      flex-direction: column;
+  }
+  &.row-to-col{
+      flex-direction: row; 
+  }
+  &.fle-sh{
+      flex-shrink: 0;
+  }
+}
+
+.flex-ce {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
