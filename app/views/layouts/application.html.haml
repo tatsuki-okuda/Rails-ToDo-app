@@ -8,11 +8,16 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %header.header
-      - if flash.present?
-        .flash
-          - flash.each do |key, value|
-            %div{:class => key}
-              = value
+    %header
+      .ct
+        .header.flex.spa-be.al-ce
+          %p Boeds
+          .iconBox
+            = image_tag 'Oval.png'
+          - if flash.present?
+            .flash
+              - flash.each do |key, value|
+                %div{:class => key}
+                  = value
     = yield
     %footer.footer
