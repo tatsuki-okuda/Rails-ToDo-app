@@ -1,5 +1,7 @@
-@import './devise';
+@import './reset';
 @import './common';
+@import './devise';
+@import './front';
 
 
 p{
@@ -17,6 +19,7 @@ body{
 
 .ct{
   width: 96.53vw;
+  max-width: 1080px;
   margin: 0 auto;
 }
 

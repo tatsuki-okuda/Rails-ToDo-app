@@ -1,0 +1,85 @@
+.frontBox{
+  padding-top: 31px;
+  &_title{
+    font-family: Avenir;
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 35px;
+  }
+  &_boardsContents{
+    list-style: none;
+    &_list{
+      width: 100%;
+      height: 161px;
+      background: #F4F4F4;
+      border-radius: 10px;
+      padding-left: 4.7%;
+      position: relative;
+      &:not(:last-of-type){
+        margin-bottom: 26px;
+      }
+      &_menuBtn{
+        position: absolute;
+        top: 39px;
+        right: 16px;
+        width: 24px;
+        &_btnIcon{
+          width: 100%;
+          & span{
+            display: block;
+            height: 6px;
+            width: 6px;
+            background-color: #000000;
+            border-radius: 50%;
+          }
+        }
+        &_select{
+          height: 66px;
+          width: 66px;
+          border-radius: 10px;
+          border: 1px solid #F4F4F4;
+          background: #FFFFFF;
+          transform: translateX(-50%);
+          margin-top: 8px;
+          padding: 10px 0 0 14px;
+          &_text{
+            display: block;
+            font-family: Avenir;
+            font-size: 1.2rem;
+            font-weight: 400;
+            &:first-of-type{
+              margin-bottom: 11px;
+            }
+          }
+        }
+      }
+      &_inner{
+        width: 80.94;
+      }
+      &_title{
+        font-family: Avenir;
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+      }
+      &_text{
+        font-family: Avenir;
+        font-size: 1.4rem;
+        color: #000000;
+        margin-bottom: 29px;
+      }
+    }
+  }
+  &_AddNewBox{
+    width: 100%;
+    height: 161px;
+    height: 160px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    margin-top: 26px;
+  }
+}
