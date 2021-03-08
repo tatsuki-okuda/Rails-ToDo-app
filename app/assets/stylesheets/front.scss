@@ -14,19 +14,27 @@
     list-style: none;
     &_list{
       width: 100%;
-      height: 161px;
+      // height: 161px;
       background: #F4F4F4;
       border-radius: 10px;
-      padding-left: 4.7%;
+      padding: 2.7% 4.7%;
       position: relative;
       &:not(:last-of-type){
         margin-bottom: 26px;
+      }
+      &_link{
+        
       }
       &_menuBtn{
         position: absolute;
         top: 39px;
         right: 16px;
         width: 24px;
+        &:hover{
+          .frontBox_boardsContents_list_menuBtn_select{
+            display: block;
+          }
+        }
         &_btnIcon{
           width: 100%;
           & span{
@@ -38,6 +46,7 @@
           }
         }
         &_select{
+          display: none;
           height: 66px;
           width: 66px;
           border-radius: 10px;
