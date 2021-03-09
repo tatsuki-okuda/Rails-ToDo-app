@@ -22,5 +22,5 @@
               .frontBox_boardsContents_list_iconBox
                 = image_tag 'Oval.png' 
     -# 記事作成
-    .frontBox_AddNewBox.flex-ce 
-      %p.AddNewBox + Add new borad
+    = link_to new_board_path, class: "frontBox_AddNewBox flex-ce " do
+      + Add new borad

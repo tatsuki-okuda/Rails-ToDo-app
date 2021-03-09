@@ -9,4 +9,8 @@ header{
 
 .header{
   padding: 10px 22px 10px 30px;
+  &_link{
+    font-size: 1.8rem;
+    color : #000000;
+  }
 }

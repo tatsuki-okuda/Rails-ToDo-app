@@ -1,0 +1,36 @@
+.showBox
+  .ct.showBox_ct
+    .showBox_menuBtn
+      .showBox_menuBtn_btnIcon.flex.al-ce.spa-be
+        %span
+        %span
+        %span
+      .showBox_menuBtn_select
+        = link_to edit_board_path, class: "showBox_menuBtn_select_text" do
+          Edit
+        %a.showBox_menuBtn_select_text Delete
+    %h2.showBox_title
+      = @board.name
+    .showBox_imgBox 
+      = image_tag 'Photo.png'
+    .showBox_content
+      %p.showBox_content_text
+        = @board.description
+    .showBox_CommentsBox 
+      %h3.showBox_CommentsBox_title Comment
+      %ul.showBox_CommentsBox_contents
+        -# list
+        %li.showBox_CommentsBox_contents_list.flex.al-ce
+          .showBox_CommentsBox_contents_list_img
+            = image_tag 'Oval.png'
+          %p.showBox_CommentsBox_contents_list_text
+            texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+        %li.showBox_CommentsBox_contents_list.flex.al-ce
+          .showBox_CommentsBox_contents_list_img
+            = image_tag 'Oval.png'
+          %p.showBox_CommentsBox_contents_list_text
+            texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+    -# 記事作成
+    -# リンクをコメント作成に変える。
+    = link_to new_board_path, class: "showBox_AddNewBox flex-ce" do
+      + Add new borad

@@ -1,0 +1,112 @@
+.showBox{
+  padding: 32px 0 39px;
+  &_ct{
+    position: relative;
+  }
+  &_menuBtn{
+    position: absolute;
+    top: 17px;
+    right: 16px;
+    width: 24px;
+    &:hover{
+      .showBox_menuBtn_select{
+        display: block;
+      }
+    }
+    &_btnIcon{
+      width: 100%;
+      & span{
+        display: block;
+        height: 6px;
+        width: 6px;
+        background-color: #000000;
+        border-radius: 50%;
+        opacity: .5;
+      }
+    }
+    &_select{
+      display: none;
+      height: 66px;
+      width: 66px;
+      border-radius: 10px;
+      border: 1px solid #F4F4F4;
+      background: #FFFFFF;
+      transform: translateX(-50%);
+      margin-top: 8px;
+      padding: 10px 0 0 14px;
+      &_text{
+        display: block;
+        font-family: Avenir;
+        font-size: 1.2rem;
+        font-weight: 400;
+        &:first-of-type{
+          margin-bottom: 11px;
+        }
+      }
+    }
+  }
+  &_title{
+    font-family: Avenir;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 36px;
+    margin-bottom: 32px;
+  }
+  &_imgBox{
+    margin-bottom: 35px;
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  &_content{
+    background: #F4F4F4;
+    border-radius: 10px;
+    padding: 40px 4.14% ;
+    margin-bottom: 80px;
+    &_text{
+      font-family: Avenir;
+      font-size: 1.4rem;
+      line-height: 23px;
+    }
+  }
+  &_CommentsBox{
+    &_title{
+      font-family: Avenir;
+      font-size: 2.6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 36px;
+      margin-bottom: 33px;
+    }
+    &_contents{
+      &_list{
+        background: #F4F4F4;
+        border-radius: 10px;
+        padding: 30px 4.14% ;
+        &:not(:last-of-type){
+          margin-bottom: 32px;
+        }
+        &:last-of-type{
+          margin-bottom: 80px;
+        }
+        &_img{
+          margin-right: 3.31%;
+        }
+        &_text{
+        }
+      }
+    }
+  }
+  &_AddNewBox{
+    width: 100%;
+    height: 161px;
+    height: 160px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    margin-top: 26px;
+    font-size: 1.8rem;
+    color : #000000;
+  }
+}

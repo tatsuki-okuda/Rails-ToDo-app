@@ -11,7 +11,8 @@
     %header
       .ct
         .header.flex.spa-be.al-ce
-          %p Boeds
+          = link_to root_path, class:"header_link" do
+            Boeds
           .iconBox
             = image_tag 'Oval.png'
           - if flash.present?
