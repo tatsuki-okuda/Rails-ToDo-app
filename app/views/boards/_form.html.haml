@@ -1,0 +1,20 @@
+ 
+.ct 
+  %ul
+    - board.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: board, local: true) do |f|
+    -# %div
+    -#   = f.label :eyecatch, 'アイキャッチ'
+    -# %div
+    -#   = f.file_field :eyecatch
+    %div
+      = f.label :name, 'Name', class: 'editBox_nameLabel'
+    %div
+      = f.text_field :name, class: 'editBox_text'
+    %div
+      = f.label :description, 'Description' ,class: 'editBox_DescriptionLabel'
+    %div
+      = f.text_area :description, class: 'editBox_textarea'
+      -# = f.rich_text_area :description
+    = f.submit "Submit", class: 'editBox_btn margin'
