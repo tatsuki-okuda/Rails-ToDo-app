@@ -11,14 +11,29 @@ class BoardsController < ApplicationController
   end
 
   def new
-    @boards = current_user.boards.build
+    @board = current_user.boards.build
+  end
+
+  def create
+    @board = current_user.boards.build(board_params)
+    if @board.save
+      # 第二引数でフラッシュ（アラート）を設定できる
+      redirect_to board_path(@board), notice: '保存できました'
+    else
+      flash.now[:error] = '保存に失敗しました'
+      render :new
+    end
   end
   
+  
   def edit
-    
   end
   
   private
+
+  def board_params
+    params.require(:board).permit(:name, :description)
+  end
 
   def set_article
     @board = Board.find(params[:id])

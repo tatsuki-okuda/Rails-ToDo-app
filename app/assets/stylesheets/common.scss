@@ -9,8 +9,30 @@ header{
 
 .header{
   padding: 10px 22px 10px 30px;
+  position: relative;
   &_link{
     font-size: 1.8rem;
     color : #000000;
+  }
+  .flash {
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    transform: translate(0, -50%);
+    z-index :10;
+    padding: 10px 20px;
+    background-color: rgba(0,0,0,.6);
+    color: white;
+    opacity: 0;
+    animation: opacity 3s;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
