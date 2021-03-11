@@ -5,14 +5,6 @@
       -#記事一覧
       - @boards.each do |board|
         %li.frontBox_boardsContents_list.flex.al-ce
-          .frontBox_boardsContents_list_menuBtn
-            .frontBox_boardsContents_list_menuBtn_btnIcon.flex.al-ce.spa-be
-              %span
-              %span
-              %span
-            .frontBox_boardsContents_list_menuBtn_select
-              %a.frontBox_boardsContents_list_menuBtn_select_text Edit
-              %a.frontBox_boardsContents_list_menuBtn_select_text Delete
           = link_to board_path(board), class: "frontBox_boardsContents_list_link"  do
             .frontBox_boardsContents_list_inner
               %p.frontBox_boardsContents_list_title 

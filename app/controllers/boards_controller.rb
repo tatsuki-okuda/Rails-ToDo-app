@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
-  before_action :set_article, only: [:show, :edit]
+  before_action :set_article, only: [:show]
+  before_action :set_current_article, only: [:edit, :update]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 
@@ -28,6 +29,24 @@ class BoardsController < ApplicationController
   
   def edit
   end
+
+  def update
+    if @board.update(board_params)
+      redirect_to board_path(@board), notice: '更新されました'
+    else
+      flash.now[:error] = '更新に失敗しました'
+      render :edit
+    end
+  end
+  
+
+  def destroy
+    board = current_user.boards.find(params[:id])
+    #  !をつけるときに削除されなかった時に例外処理をくらえられる。
+    # 削除の場合は削除前と後で整合性を取らないといけない。
+    board.destroy!
+    redirect_to root_path, notice: '削除できました。'
+  end
   
   private
 
@@ -38,5 +57,10 @@ class BoardsController < ApplicationController
   def set_article
     @board = Board.find(params[:id])
   end
+
+  def set_current_article
+    @board = current_user.boards.find(params[:id])
+  end
+  
   
 end

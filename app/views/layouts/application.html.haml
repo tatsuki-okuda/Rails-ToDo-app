@@ -14,7 +14,16 @@
           = link_to root_path, class:"header_link" do
             Boards
           .iconBox
-            = image_tag 'Oval.png'
+            .iconBox_imgBox
+              = image_tag 'Oval.png'
+            .iconBox_menuBox.flex-ce
+              .flex.al-st.column
+                - if user_signed_in?
+                  %a プロフィール
+                  %a 登録リスト
+                  = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }, class: ''
+                - else
+                  = link_to 'ログイン', new_user_session_path, class: ''
           - if flash.present?
             .flash
               - flash.each do |key, value|
