@@ -1,21 +1,28 @@
 .showBox
   .ct.showBox_ct
-    .showBox_menuBtn
-      .showBox_menuBtn_btnIcon.flex.al-ce.spa-be
-        %span
-        %span
-        %span
-      .showBox_menuBtn_select
-        = link_to edit_board_path, class: "showBox_menuBtn_select_text" do
-          Edit
-        %a.showBox_menuBtn_select_text Delete
+    -# メニュー
+    - if user_signed_in? && current_user.has_written?(@board)
+      .showBox_menuBtn
+        .showBox_menuBtn_btnIcon.flex.al-ce.spa-be
+          %span
+          %span
+          %span
+        .showBox_menuBtn_select
+          = link_to edit_board_path, class: "showBox_menuBtn_select_text" do
+            Edit
+          = link_to board_path, data: { method: 'delete' }, class: "showBox_menuBtn_select_text" do
+            Delete
+    -# title
     %h2.showBox_title
       = @board.name
+    -# img
     .showBox_imgBox 
       = image_tag 'Photo.png'
+    -# テキスト
     .showBox_content
       %p.showBox_content_text
         = @board.description
+    -# コメント
     .showBox_CommentsBox 
       %h3.showBox_CommentsBox_title Comment
       %ul.showBox_CommentsBox_contents
