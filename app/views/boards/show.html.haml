@@ -22,22 +22,49 @@
     .showBox_content
       %p.showBox_content_text
         = @board.description
-    -# コメント
+    -# tasks
     .showBox_CommentsBox 
-      %h3.showBox_CommentsBox_title Comment
+      %h3.showBox_CommentsBox_title Tasks
       %ul.showBox_CommentsBox_contents
-        -# list
-        %li.showBox_CommentsBox_contents_list.flex.al-ce
-          .showBox_CommentsBox_contents_list_img
-            = image_tag 'Oval.png'
-          %p.showBox_CommentsBox_contents_list_text
-            texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
-        %li.showBox_CommentsBox_contents_list.flex.al-ce
-          .showBox_CommentsBox_contents_list_img
-            = image_tag 'Oval.png'
-          %p.showBox_CommentsBox_contents_list_text
-            texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+        -# task一覧
+        - @tasks.each do |task|
+          %li.showBox_CommentsBox_contents_list
+            -# メニュー
+            -# - if user_signed_in? && current_user.has_written?(@board)
+            -# .showBox_CommentsBox_contents_list_menuBtn
+            -#   .showBox_CommentsBox_contents_list_menuBtn_btnIcon.flex.al-ce.spa-be
+            -#     %span
+            -#     %span
+            -#     %span
+            -#   .showBox_menuBtn_select
+            -#     = link_to edit_board_task_path, class: "showBox_menuBtn_select_text" do
+            -#       Edit
+            -#     = link_to board_task_path, data: { method: 'delete' }, class: "showBox_menuBtn_select_text" do
+            -#       Delete
+            %h3.showBox_CommentsBox_contents_list_title
+              = task.title
+            %p.showBox_CommentsBox_contents_list_text
+              = task.content
+            %p.showBox_CommentsBox_contents_list_text
+              = task.deadline
+            .showBox_CommentsBox_contents_list_img
+              = image_tag 'Oval.png'
+      -# コメント
+      .showBox_CommentsBox 
+        %h3.showBox_CommentsBox_title Comment
+        %ul.showBox_CommentsBox_contents
+          -# list
+          %li.showBox_CommentsBox_contents_list.flex.al-ce
+            .showBox_CommentsBox_contents_list_img
+              = image_tag 'Oval.png'
+            %p.showBox_CommentsBox_contents_list_text.non
+              texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+          %li.showBox_CommentsBox_contents_list.flex.al-ce
+            .showBox_CommentsBox_contents_list_img
+              = image_tag 'Oval.png'
+            %p.showBox_CommentsBox_contents_list_text.non
+              texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
     -# 記事作成
     -# リンクをコメント作成に変える。
-    = link_to new_board_path, class: "showBox_AddNewBox flex-ce" do
-      + Add new borad
+    = link_to new_board_task_path(@board), class: "showBox_AddNewBox flex-ce" do
+      + Add new Task

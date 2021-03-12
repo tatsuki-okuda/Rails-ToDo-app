@@ -30,8 +30,13 @@
   &_textarea{
     height: 200px;
     margin-bottom: 80px;
+    &.uni-margin{
+      margin-bottom: 40px;
+    }
   }
-
+  &_datetime{
+    margin-bottom: 80px;
+  }
   &_btn{
     width: 100%;
     max-width: 640px;

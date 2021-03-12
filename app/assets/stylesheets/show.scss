@@ -71,6 +71,9 @@
     }
   }
   &_CommentsBox{
+    background-color: black;
+    border-radius: 10px;
+    padding:20px;
     &_title{
       font-family: Avenir;
       font-size: 2.6rem;
@@ -78,12 +81,15 @@
       font-weight: 400;
       line-height: 36px;
       margin-bottom: 33px;
+      color: white;
     }
     &_contents{
       &_list{
         background: #F4F4F4;
         border-radius: 10px;
         padding: 30px 4.14% ;
+        list-style: none;
+        position: relative;
         &:not(:last-of-type){
           margin-bottom: 32px;
         }
@@ -93,7 +99,46 @@
         &_img{
           margin-right: 3.31%;
         }
+        &_menuBtn{
+          position: absolute;
+          top: 40px;
+          right: 30px;
+          width: 24px;
+          &:hover{
+            .showBox_menuBtn_select{
+              display: block;
+            }
+          }
+          &_btnIcon{
+            width: 100%;
+            & span{
+              display: block;
+              height: 6px;
+              width: 6px;
+              background-color: #000000;
+              border-radius: 50%;
+              opacity: .5;
+            }
+          }
+        }
+        &_title{
+          font-family: Avenir;
+          font-size: 2.0rem;
+          font-style: normal;
+          font-weight: bold;
+          line-height: 1.5;
+          margin-bottom: 10px;
+        }
         &_text{
+          font-family: Avenir;
+          font-size: 1.6rem;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1.5;
+          margin-bottom: 33px;
+          &.non{
+            margin-bottom: 0;
+          }
         }
       }
     }
