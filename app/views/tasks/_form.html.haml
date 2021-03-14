@@ -1,0 +1,19 @@
+= form_with(model: task, url: board_tasks_path(task.board), local: true) do |f|
+  -# %div
+  -#   = f.label :eyecatch, 'アイキャッチ'
+  -# %div
+  -#   = f.file_field :eyecatch
+  %div
+    = f.label :title, 'title', class: 'editBox_nameLabel'
+  %div
+    = f.text_field :title, class: 'editBox_text'
+  %div
+    = f.label :content, 'Content' ,class: 'editBox_DescriptionLabel'
+  %div
+    = f.text_area :content, class: 'editBox_textarea uni-margin'
+    -# = f.rich_text_area :description
+  %div
+    = f.label :deadline, 'Deadline' ,class: 'editBox_DescriptionLabel'
+  %div
+    = f.datetime_field :deadline, class: 'editBox_datetime'
+  = f.submit "Submit", class: 'editBox_btn margin'

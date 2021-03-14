@@ -30,17 +30,17 @@
         - @tasks.each do |task|
           %li.showBox_CommentsBox_contents_list
             -# メニュー
-            -# - if user_signed_in? && current_user.has_written?(@board)
-            -# .showBox_CommentsBox_contents_list_menuBtn
-            -#   .showBox_CommentsBox_contents_list_menuBtn_btnIcon.flex.al-ce.spa-be
-            -#     %span
-            -#     %span
-            -#     %span
-            -#   .showBox_menuBtn_select
-            -#     = link_to edit_board_task_path, class: "showBox_menuBtn_select_text" do
-            -#       Edit
-            -#     = link_to board_task_path, data: { method: 'delete' }, class: "showBox_menuBtn_select_text" do
-            -#       Delete
+            -# - if user_signed_in? && current_user.has_written_task?(task)
+            .showBox_CommentsBox_contents_list_menuBtn
+              .showBox_CommentsBox_contents_list_menuBtn_btnIcon.flex.al-ce.spa-be
+                %span
+                %span
+                %span
+              .showBox_menuBtn_select
+                = link_to edit_board_task_path(@board,task), class: "showBox_menuBtn_select_text" do
+                  Edit
+                = link_to board_task_path(@board,task), data: { method: 'delete' }, class: "showBox_menuBtn_select_text" do
+                  Delete
             %h3.showBox_CommentsBox_contents_list_title
               = task.title
             %p.showBox_CommentsBox_contents_list_text
