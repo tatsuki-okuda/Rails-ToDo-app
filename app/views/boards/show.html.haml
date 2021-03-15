@@ -49,21 +49,19 @@
               = task.deadline
             .showBox_CommentsBox_contents_list_img
               = image_tag 'Oval.png'
-      -# コメント
-      .showBox_CommentsBox 
-        %h3.showBox_CommentsBox_title Comment
-        %ul.showBox_CommentsBox_contents
-          -# list
-          %li.showBox_CommentsBox_contents_list.flex.al-ce
-            .showBox_CommentsBox_contents_list_img
-              = image_tag 'Oval.png'
-            %p.showBox_CommentsBox_contents_list_text.non
-              texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
-          %li.showBox_CommentsBox_contents_list.flex.al-ce
-            .showBox_CommentsBox_contents_list_img
-              = image_tag 'Oval.png'
-            %p.showBox_CommentsBox_contents_list_text.non
-              texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext
+            -# コメント
+            .showBox_CommentsBox.bg-white
+              %h3.showBox_CommentsBox_title Comment
+              %ul.showBox_CommentsBox_contents
+                -# list
+                -# - @comments.each do |comment|
+                %li.showBox_CommentsBox_contents_list.flex.al-ce
+                  .showBox_CommentsBox_contents_list_img
+                    = image_tag 'Oval.png'
+                  %p.showBox_CommentsBox_contents_list_text.non
+                    text
+              = link_to new_board_task_comment_path(@board,task), class: "showBox_AddNewBox flex-ce" do
+                + Add new Comment
     -# 記事作成
     -# リンクをコメント作成に変える。
     = link_to new_board_task_path(@board), class: "showBox_AddNewBox flex-ce" do

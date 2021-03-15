@@ -20,4 +20,6 @@ class Task < ApplicationRecord
   validates :deadline, presence: true
 
   belongs_to :board
+
+  has_many :comments, dependent: :destroy
 end

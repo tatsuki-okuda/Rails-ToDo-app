@@ -1,0 +1,11 @@
+.editBox
+  .ct 
+    %ul
+      - @comment.errors.full_messages.each do |message|
+        %li= message
+    = form_with(model: @comment, url: board_task_comments_path(@comment.task), local: true) do |f|
+      %div
+        = f.label :content, 'content', class: 'editBox_nameLabel'
+      %div
+        = f.text_field :content, class: 'editBox_text'
+      = f.submit "Submit", class: 'editBox_btn margin'
