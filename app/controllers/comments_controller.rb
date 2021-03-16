@@ -7,10 +7,11 @@ class CommentsController < ApplicationController
 
   def create
     task = Task.find(params[:task_id])
-    board = Board.find(params[:board_id])
+    # タスクに紐づく記事IDから記事を見つける→保存で記事の所依に飛ぶ
+    board = Board.find(task.board_id)
     @comment = task.comments.build(comment_params)
     if @comment.save
-      redirect_to board_path(board,task), notice: 'タスクを追加'
+      redirect_to board_path(board), notice: 'タスクを追加'
     else
       flash.now[:error] = '追加できませんでした'
       render :new
