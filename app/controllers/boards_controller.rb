@@ -10,15 +10,19 @@ class BoardsController < ApplicationController
  
   def show
     @tasks = @board.tasks
-    # @task = @board.tasks.find(params[:id])
 
 
     # @taskにtaskの全データが入っているので、個別のtaskデータからcommentを取り出す
-    @comments = []
-    for task in @tasks do
-      @comments.push(task.comments)
-    end
+    # @comments = []
+    # for task in @tasks do
+    #   @comments.push(task.comments)
+    # end
 
+    # @tasks.each do |task|
+    #   task.comments.each do |comment|
+    #     @comments.push(comment)
+    #   end
+    # end
   end
 
   def new

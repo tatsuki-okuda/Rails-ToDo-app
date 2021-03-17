@@ -54,14 +54,13 @@
               %h3.showBox_CommentsBox_title Comment
               %ul.showBox_CommentsBox_contents
                 -# list
-                - @comments.each do |comment|
-                  - comment.each do |comment|
-                    - if comment.task_id == task.id
-                      %li.showBox_CommentsBox_contents_list.flex.al-ce
-                        .showBox_CommentsBox_contents_list_img
-                          = image_tag 'Oval.png'
-                        %p.showBox_CommentsBox_contents_list_text.non
-                          = comment.content
+                - task.comments.each do |comment|
+                  - if comment.task_id == task.id
+                    %li.showBox_CommentsBox_contents_list.flex.al-ce
+                      .showBox_CommentsBox_contents_list_img
+                        = image_tag 'Oval.png'
+                      %p.showBox_CommentsBox_contents_list_text.non
+                        = comment.content
               = link_to new_board_task_comment_path(@board,task), class: "showBox_AddNewBox flex-ce" do
                 + Add new Comment
     -# 記事作成
