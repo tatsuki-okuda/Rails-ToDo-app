@@ -1,0 +1,17 @@
+{
+  "name": "Rails-ToDo-app",
+  "description": "This is blogapp",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/tatsuki-okuda/Rails-ToDo-app.git",
+  "env": {},
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [{
+    "url": "heroku/nodejs"
+  }, {
+    "url": "heroku/ruby"
+  }],
+  "stack": "heroku-18"
+}
